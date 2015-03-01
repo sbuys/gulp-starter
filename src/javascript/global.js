@@ -1,0 +1,1 @@
+//Browserify entry point for the global.js bundle
