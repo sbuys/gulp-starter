@@ -1,10 +1,10 @@
 {
   "name": "gulp-starter",
   "version": "0.1.1",
-  "description": "Gulp starter with common tasks and scenarios",
+  "description": "Gulp starter with common tasks and scenarios. Forked from greypants/gulp-starter.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/greypants/gulp-starter.git"
+    "url": "git://github.com/sbuys/gulp-starter.git"
   },
   "browserify": {
     "transform": [
