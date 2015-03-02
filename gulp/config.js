@@ -49,15 +49,15 @@ module.exports = {
       // Additional file extentions to make optional
       extensions: [],
       // list of modules to make require-able externally
-      require: ['jquery', 'lodash']
+      require: ['jquery', 'lodash', 'react']
       // See https://github.com/greypants/gulp-starter/issues/87 for note about
       // why this is 'backbone/node_modules/underscore' and not 'underscore'
     }, {
-      entries: src + '/javascript/app.js',
+      entries: src + '/javascript/main.js',
       dest: dest,
-      outputName: 'app.js',
+      outputName: 'main.js',
       // list of externally available modules to exclude from the bundle
-      external: ['jquery', 'lodash']
+      external: ['jquery', 'lodash', 'react']
     }]
   },
   production: {
