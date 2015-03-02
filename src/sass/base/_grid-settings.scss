@@ -1,0 +1,84 @@
+@import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat-helpers";
+
+// Neat Overrides
+// $column: 90px;
+// $gutter: 30px;
+$grid-columns: 12;
+$max-width: em(1440);
+
+// Neat Breakpoints
+//$tiny-screen: em(0);
+$xsmall-screen: em(640);
+$small-screen: 	em(800);
+$medium-screen: em(960);
+$large-screen: 	em(1440);
+$xlarge-screen: em(1600);
+
+// http://thoughtbot.github.io/neat-docs/latest/#new-breakpoint
+// Todo: setup contexts
+
+$tiny-screen: new-breakpoint(max-width #{$xsmall-screen - 1} 1);
+$xsmall-screen-up: new-breakpoint(min-width $xsmall-screen 4);
+$small-screen-up: new-breakpoint(min-width $small-screen 4);
+$medium-screen-up: new-breakpoint(min-width $medium-screen 12);
+$large-screen-up: new-breakpoint(min-width $large-screen 12);
+$xlarge-screen-up: new-breakpoint(min-width $xlarge-screen 12);
+
+@mixin inset {
+  @include outer-container(85%);
+
+  @include media($tiny-screen) { // under 640
+    @include outer-container(90%);
+  }
+
+  @include media($xlarge-screen-up) { //1600
+    @include outer-container($max-width); //1440
+  }
+}
+
+
+@mixin grid {
+  @include span-columns(12);
+
+  img { vertical-align: middle; }
+
+  .row {
+    @include row();
+
+    &:last-child {
+      .col {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @for $i from 1 through 12 {
+    .col-#{$i}
+    { @include span-columns(12 of 12);
+      margin-bottom: 2em;
+    }
+
+    .shift-#{$i} {
+      @include shift(0);
+    }
+  }
+
+
+  @include media($medium-screen-up) {    
+    @for $i from 1 through 12 {
+
+      .col-#{$i}
+      { @include span-columns($i of 12);
+        margin-bottom: 2em;
+      }
+
+      .shift-#{$i} {
+        @include shift($i);
+      }
+
+    }
+  }
+
+  .omega {
+    @include omega
+  }

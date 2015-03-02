@@ -1,12 +1,13 @@
-@import scss-mixins
-@import typography
-@import icons
+@import "../../node_modules/bourbon/app/assets/stylesheets/bourbon";
+@import "base/base";
+@import "../../node_modules/bourbon-neat/app/assets/stylesheets/neat";
 
-.social-icons
-  h4
-    display: inline-block
-    margin: 20px 10px 0 0
+@import "icons";
 
-  .icon
-    display: inline-block
-    margin: 0 5px
+// Need to hack visual grid to display correctly
+body:before {
+  max-width: 85% !important;
+  @include media($xlarge-screen-up) { //1600
+    max-width: $max-width !important;
+  }
+}
