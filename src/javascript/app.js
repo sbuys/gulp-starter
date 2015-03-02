@@ -8,4 +8,3 @@ var _ = require('lodash');
 // This combination lets this file use the jquery module bundled with
 // global.js, instead of including it twice!
 
-console.log('page.js loaded!');
