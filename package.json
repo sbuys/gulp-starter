@@ -50,7 +50,8 @@
   "dependencies": {
     "jquery": "~2.1.0",
     "lodash": "~3.3.1",
-    "bourbon": "4.2.1",
-    "bourbon-neat": "1.7.1"
+    "bourbon": "~4.2.1",
+    "bourbon-neat": "~1.7.1",
+    "modularized-normalize-scss": "~3.0.2"
   }
 }
