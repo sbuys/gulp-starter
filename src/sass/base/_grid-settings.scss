@@ -80,5 +80,6 @@ $xlarge-screen-up: new-breakpoint(min-width $xlarge-screen 12);
   }
 
   .omega {
-    @include omega
+    @include omega;
   }
+}
